@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './index.scss'
+import Ruteado from "./componentes/Ruteado";
+import Header from "./componentes/header";
+import Footer from "./componentes/footer";
+import {EstadoProvider} from "./componentes/estadoGlobal";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <EstadoProvider>
+            <div className="wc hc position-relative">
+                <Header/>
+                <div className={"wc"}>
+                    <Ruteado/>
+                </div>
+                <Footer/>
+            </div>
+        </EstadoProvider>
+    );
 }
 
 export default App;

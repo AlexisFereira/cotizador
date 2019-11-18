@@ -1,0 +1,61 @@
+#flagSelect {
+  position: relative;
+  z-index: 2;
+}
+
+#flagSelect .selected {
+  border: 2px solid #e4e4e4;
+  position: relative;
+  border-radius: 4px;
+  height: 40px;
+  padding: 0 -1em 0 .5em;
+  cursor: pointer;
+  background-color: white;
+  background-image: url(https://www.estudiodigital.co/nuevoCotizador/img/arrows.png);
+  background-position: calc(100% - .5em) center;
+  background-repeat: no-repeat;
+  background-size: 10px auto;
+
+}
+
+#flagSelect .selected:hover {
+  border-color: #E88200;
+}
+
+#flagSelect .selected .flag,
+#flagSelect .list-countries .country .flag {
+  flex: 0 0 30px;
+  margin-right: .1em;
+}
+
+#flagSelect .selected span {
+  margin-right: 1em;
+}
+
+#flagSelect .list-countries {
+  background: white;
+  height: 200px;
+  width: 180px;
+  overflow: hidden;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .3);
+}
+
+#flagSelect .list-countries .country {
+  padding: .7em .5em;
+  border-bottom: 1px solid #e4e4e4;
+  cursor: pointer;
+}
+
+#flagSelect .list-countries .country span {
+  margin-right: 1em;
+}
+
+#flagSelect .list-countries .country:hover {
+  background: #f7f7f7;
+}
+//commit

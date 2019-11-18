@@ -1,0 +1,115 @@
+@import "./componentes/reactSelectFlag/flag";
+
+*{
+  border:0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+
+  #root{
+    overflow: hidden;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+  }
+
+  select{
+    background: white url("/img/sort_both.png") no-repeat !important;
+    background-size: 24px auto !important;
+    background-position: right center !important;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  h1,h2,h3,h4,h5,h6{
+    font-family: 'Merriweather Sans', sans-serif;
+  }
+}
+
+.cb{color: white;}
+
+.bgg{background-color: #e4e4e4;}
+.bgb{background-color: white;}
+
+.wc{width: 100%;}
+.hc{height: 100%;}
+.hvh{height: 100vh;}
+
+.mw{max-width: 1280px; margin: auto;}
+.imgr{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.imgb{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.f01,.f02{
+  display: flex;
+  flex-flow:row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.f02{flex-flow: column nowrap;}
+
+.algfs{align-items: flex-start;}
+.algfe{align-items: flex-end;}
+.algs{align-items: stretch;}
+
+.jcfs{justify-content: flex-start;}
+.jcfe{justify-content: flex-end;}
+.jcsb{justify-content: space-between;}
+.jcsa{justify-content: space-around;}
+
+
+%tr,.tr{
+  transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+
+.dn{display: none!important;}
+.op{opacity: 1!important;}
+
+.ro{border:1px solid red;}
+
+.pa{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sombra{
+  background: rgba(0,0,0,.5);
+}
+
+.sombraDeg{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+33,000000+100&0+32,0.65+100 */
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 32%, rgba(0,0,0,0.01) 33%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 32%,rgba(0,0,0,0.01) 33%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 32%,rgba(0,0,0,0.01) 33%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+}
+
+#modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+}
+

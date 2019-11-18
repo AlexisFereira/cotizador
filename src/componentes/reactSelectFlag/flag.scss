@@ -1,0 +1,25 @@
+.flag-select__control{
+  height: 35px;
+}
+.flag-select__value-container{
+  height: 100%;
+}
+
+.bx-livechat-wrapper {
+  height: calc(100vh - 200px);
+}
+
+.flag-select__menu{
+  z-index: 1;
+}
+
+.flag{
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  margin-right: .1em;
+}
+
+.flag-select__menu{
+  min-width: 180px;
+}
