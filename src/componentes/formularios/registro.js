@@ -4,6 +4,7 @@ import {Formik, Form} from 'formik';
 import * as Yup from 'yup';
 import {EstadoContext} from "../estadoGlobal";
 import ReactSelectFlag from "../reactSelectFlag";
+import axios from "axios";
 
 const SignupSchema = Yup.object().shape({
     nombre: Yup.string()
@@ -24,7 +25,7 @@ const SignupSchema = Yup.object().shape({
         .oneOf([true], 'Debe aceptar nuestras políticas.'),
 });
 
-const Registro = () => {
+const Registro = (props) => {
 
     const [estado,setEstado] = useContext(EstadoContext);
 
@@ -48,21 +49,41 @@ const Registro = () => {
             }}
             validationSchema={SignupSchema}
             onSubmit={values => {
-                // same shape as initial values
 
-                console.log(values);
-                const {nombre,empresa,telfono,correo} = values;
+                // same shape as initial values
+                const {nombre,empresa,telefono,correo,indicativo} = values;
+
 
                 // actualizaStep({nombre,empresa,telfono,correo,name:"registro"})
                 let datacopy = [...estado]
 
-                setEstado(() => datacopy.map(item => {
-                    if(item.name === 'registro'){
-                        return( {nombre,empresa,telfono,correo,name:"registro",completado:true})
-                    }else return item;
-                }))
+
 
                 SetP(true)
+
+                axios.post("https://estudiodigital.co/cotizador/cotizador.php", values)
+                    .then(response => {
+                        if(response.status){
+                            SetP(false)
+                            props.handleTab(2)
+
+                            setEstado(() => datacopy.map(item => {
+                                if(item.name === 'registro'){
+                                    return( {nombre,empresa,telefono,correo,name:"registro",completado:true})
+                                }else return item;
+                            }))
+                        }
+                        else{
+                            console.log(response,"::::: response")
+                            SetP(false)
+                        }
+                    })
+                    .catch(err =>
+                        {
+                            console.log(err,":::::: error")
+                            SetP(false)
+                        }
+                    )
 
             }}
         >

@@ -30,9 +30,6 @@ const Myt = styled.section`
         }
      }
      
-     
-     
-     
      .cont-icon{
         position:absolute;
         left:10px;
@@ -49,7 +46,7 @@ const Myt = styled.section`
 
         
         .icon{
-            background: transparent url(https://www.estudiodigital.co/nuevoCotizador/img/iconos.png) no-repeat ${props => (props.activo || props.completado) ? "100%" : "0%"} ${props => props.icon ? props.icon : "0"}   ;
+            background: transparent url(/img/iconos.png) no-repeat ${props => (props.activo || props.completado) ? "100%" : "0%"} ${props => props.icon ? props.icon : "0"}   ;
             background-size:200% auto;
             height:100%; 
             width:100%; 
@@ -104,23 +101,23 @@ const Myt = styled.section`
 `
 
 
-const MyTab = ({title,icon,open,children,handle,completado})=>{
+const MyTab = ({title,icon,open,children,handle,completado,current,tabN})=>{
     return(
-      <Myt icon={ icon ? `${(14.28 * icon).toString()}%` :"0%"} activo={open} completado={completado}>
+      <Myt icon={ icon ? `${(12.5 * icon).toString()}%` :"0%"} activo={open} completado={completado}>
           <div className="cont-icon">
               <div className="icon"></div>
           </div>
-          <Flex className={"wc"} onClick={()=> handle()}>
+          <Flex className={"wc"} onClick={()=> handle(open ? 0 : tabN)}>
               <Flex className="title" flex={"1 0 200px"} jc={"flex-start"}>
                   <span>{title}</span>
               </Flex>
-              {!open &&
-              <Flex flex={" 0 0 10%"} onClick={()=> handle()} className={"px-2"}>
-                  <img src="/img/caret.png" alt="" className={"wc caret"} />
+              {current !== tabN &&
+              <Flex flex={" 0 0 10%"} className={"px-2"}>
+                  <img src={open ? "/img/up.png" : "/img/caret.png"} alt="" className={"wc caret"} />
               </Flex>}
           </Flex>
 
-          <Collapse isOpened={open}>
+          <Collapse isOpened={ open || current === tabN }>
               <div className="wc px-2 px-md-4 px-lg-3 px-xl-4 mx-auto pt-3" style={{maxWidth:"700px",borderTop:"1px solid #cbcbcb"}}>
                   {children}
               </div>
