@@ -139,7 +139,7 @@ const Registro = (props) => {
                                 onchange={handleChange}
                                 error={errors.politicas && touched.politicas ? errors.politicas : ""}
                             >
-                                <p className={"mb-0"}>Acepto política de tratamientos de datos.</p>
+                                <p className={"mb-0"}>Acepto <a href="https://www.estudiodigital.co/politica-de-privacidad/" target={"_blank"}>políticas de tratamientos de datos.</a></p>
                             </Checkbox>
 
 

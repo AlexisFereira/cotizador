@@ -14,7 +14,7 @@ import {withRouter} from "react-router-dom";
 import {EstadoContext} from "../estadoGlobal";
 import {colorNames} from "react-spring/cookbook";
 import Integracion from "../formularios/integracion";
-
+import Dominio from "../formularios/dominio"
 
 const Resumen = styled.section`
      width:100%;
@@ -149,7 +149,10 @@ const Cotizador = (props) => {
                         current={myState.current}
 
                     >
-                        <h1>Dominio</h1>
+                        <Dominio
+                            disabled={!completados.logo}
+                            hanldeTab={(x) => setTab(x)}
+                        />
                     </MyTab>
 
                     <MyTab
