@@ -8,7 +8,7 @@ const Certificado = (props) => {
     return (
         <Formik
             initialValues={{
-                certificado: false,
+                certificado: true,
                 cdn: false,
             }}
             onSubmit={values => {

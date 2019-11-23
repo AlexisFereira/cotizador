@@ -11,7 +11,7 @@ const Marketing = (props) => {
     return (
         <Formik
             initialValues={{
-                estrategia: false,
+                estrategia: true,
                 integracion: false,
             }}
             onSubmit={values => {

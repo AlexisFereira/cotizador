@@ -80,7 +80,7 @@ const Dominio = (props)=> {
                 }}
             />
             <div className="wc py-2">
-                {estadoLocal.disponible && <p style={{color:"green"}}>¡Dominio disponible!</p>}c
+                {estadoLocal.disponible && <p style={{color:"green"}}>¡Dominio disponible!</p>}
                 <p>Costo del dominio: <b>$50.0000 cop (al año)</b></p>
             </div>
             <Flex

@@ -8,7 +8,7 @@ const Hosting = (props) => {
     return (
         <Formik
             initialValues={{
-                hosting: false,
+                hosting: true,
             }}
             onSubmit={values => {
                 // same shape as initial values

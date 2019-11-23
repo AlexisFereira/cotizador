@@ -6,7 +6,8 @@ import {Transition} from 'react-spring/renderprops'
 const Sitio = ({disabled})=>{
 
     const [tab,setTab]=useState(1);
-    const [shopify,setShop]=useState("woo");
+    const [shopify,setShop]=useState("informativo");
+
 
     return(
         <div className={"wc"}>

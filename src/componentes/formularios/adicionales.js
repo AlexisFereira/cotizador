@@ -11,8 +11,8 @@ const Adicionales = (props)=>{
             initialValues={{
                 pAdicionales: false,
                 cantidad: 1,
-                idiomas:false,
-                correos:false
+                idiomas:true,
+                correos:true
             }}
             onSubmit={values => {
                 // same shape as initial values

@@ -5,8 +5,8 @@ import {Btn, Flex, Switch} from "../ui";
 const Logo = (props) => {
 
    const[logo,setLogo]=useState({
-       tipo:'',
-       logo:false
+       tipo:'logo',
+       logo:true
    })
 
     return (
